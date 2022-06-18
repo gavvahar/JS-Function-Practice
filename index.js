@@ -15,7 +15,10 @@ function goLeft() {
     case "follow":
       follow();
       break;
-    case "back":
+    case "continue":
+      continueThrough();
+      break;
+    default:
       start();
       break;
   }
@@ -47,7 +50,28 @@ function follow() {
         "After leaving the cat colony, you are never able to find it again. Without proof, no one believes your story, which passes into legend nonetheless."
       );
       break;
-    case "back":
+    default:
+      goLeft();
+      break;
+  }
+}
+
+function continueThrough() {
+  let thirdAnswer = window.prompt(
+    "You come across a chamber that extends upward to a shining light above. There is a long, winding staircase and a much quicker, but rickety-looking, ladder that lead up towards the light. Which do you take?"
+  );
+  switch (thirdAnswer) {
+    case "ladder":
+      window.alert(
+        "After ascending a few feet up the ladder, one of its rungs snaps and you fall comedically through each of the rungs below. Sheepish, you return home."
+      );
+      break;
+    case "staircase":
+      window.alert(
+        "After ascending the staircase, you discover a shiny blue stone, which you take home and cherish forever."
+      );
+      break;
+    default:
       goLeft();
       break;
   }
