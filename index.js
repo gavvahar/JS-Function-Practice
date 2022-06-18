@@ -12,6 +12,9 @@ function goLeft() {
     It scampers off down a small hole, just large enough for you to crawl through. 
     Do you follow it, or continue on your path?`);
   switch (secondAnswer) {
+    case "follow":
+      follow();
+      break;
     case "back":
       start();
       break;
