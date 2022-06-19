@@ -29,7 +29,10 @@ function goRight() {
     On the other side of him, you see a shiny chest of treasure. Another path would 
     lead you away from the dragon all together. Which do you take?`);
   switch (secondAnswer) {
-    case "back":
+    case "past the dragon":
+      pastTheDragon();
+      break;
+    default:
       start();
       break;
   }
@@ -76,4 +79,26 @@ function continueThrough() {
       break;
   }
 }
+
+function pastTheDragon() {
+  let thirdAnswer = window.prompt(
+    "The dragon awakes and sits upright. You only have a moment to respond, to stay or to run:"
+  );
+  switch (thirdAnswer) {
+    case "stay":
+      window.alert(
+        "You and the dragon have an uplifting conversation about local politics and become lifelong friends."
+      );
+      break;
+    case "run":
+      window.alert(
+        "Quickly, you run back to the cave's entrance. Sheepish, you run home."
+      );
+      break;
+    default:
+      goRight();
+      break;
+  }
+}
+
 start();
